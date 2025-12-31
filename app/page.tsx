@@ -5,15 +5,12 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 export default function Home() {
-  const [isWindows, setIsWindows] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase()
-    const isWin = userAgent.includes('win')
     const isMob = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent)
     
-    setIsWindows(isWin && !isMob)
     setIsMobile(isMob)
   }, [])
 
