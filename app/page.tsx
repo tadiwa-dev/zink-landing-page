@@ -23,7 +23,7 @@ export default function Home() {
         alert('Zink AI Minutes is not yet available on iOS. Please check back soon!')
       }
     } else {
-      window.location.href = 'https://firebasestorage.googleapis.com/v0/b/novo-freedom-app.firebasestorage.app/o/downloads%2FZinkSetup.exe?alt=media&token=87aed0b0-f938-4a81-ac50-70eb7b31f5c4'
+      window.location.href = 'https://firebasestorage.googleapis.com/v0/b/novo-freedom-app.firebasestorage.app/o/downloads%2FZinkSetup.exe?alt=media&token=6802a1ae-df0b-4517-b40a-4de0e6b1d3f0'
     }
   }
 
@@ -83,7 +83,7 @@ export default function Home() {
         <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-16">
           {/* Windows Button */}
           <a
-            href="https://firebasestorage.googleapis.com/v0/b/novo-freedom-app.firebasestorage.app/o/downloads%2FZinkSetup.exe?alt=media&token=87aed0b0-f938-4a81-ac50-70eb7b31f5c4"
+            href="https://firebasestorage.googleapis.com/v0/b/novo-freedom-app.firebasestorage.app/o/downloads%2FZinkSetup.exe?alt=media&token=6802a1ae-df0b-4517-b40a-4de0e6b1d3f0"
             className="bg-primary text-white p-6 rounded-xl shadow-lg hover:shadow-xl hover:opacity-90 transition duration-300 transform hover:scale-105 flex flex-col items-center space-y-3"
           >
             <Image
