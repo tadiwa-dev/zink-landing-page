@@ -69,7 +69,7 @@ export default function Home() {
           The only AI note-taker that handles mixed English & Shona conversations. Available on your desktop and in your pocket.
         </p>
 
-      {/* App Icon or Device Mockup */}
+        {/* App Icon or Device Mockup */}
         <div className="mb-16 flex justify-center">
           <div className="relative w-80 h-80">
             <Image
