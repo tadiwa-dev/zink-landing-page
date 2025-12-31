@@ -1,6 +1,6 @@
 'use client'
 
-import { Download, Smartphone, Music, FileText, Globe, Lock, Share2, Github, Mail } from 'lucide-react'
+import { Music, FileText, Globe, Github, Mail } from 'lucide-react'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
