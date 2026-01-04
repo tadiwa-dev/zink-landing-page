@@ -23,7 +23,7 @@ export default function Home() {
         alert('Zink AI Minutes is not yet available on iOS. Please check back soon!')
       }
     } else {
-      window.location.href = 'https://firebasestorage.googleapis.com/v0/b/novo-freedom-app.firebasestorage.app/o/downloads%2FZinkSetup.exe?alt=media&token=6802a1ae-df0b-4517-b40a-4de0e6b1d3f0'
+      window.location.href = 'https://apps.microsoft.com/store/detail/9PBPK70JCSZJ?cid=DevShareMCLPCS'
     }
   }
 
@@ -83,18 +83,16 @@ export default function Home() {
         <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-16">
           {/* Windows Button */}
           <a
-            href="https://firebasestorage.googleapis.com/v0/b/novo-freedom-app.firebasestorage.app/o/downloads%2FZinkSetup.exe?alt=media&token=6802a1ae-df0b-4517-b40a-4de0e6b1d3f0"
-            className="bg-primary text-white p-6 rounded-xl shadow-lg hover:shadow-xl hover:opacity-90 transition duration-300 transform hover:scale-105 flex flex-col items-center space-y-3"
+            href="https://apps.microsoft.com/store/detail/9PBPK70JCSZJ?cid=DevShareMCLPCS"
+            className="bg-primary text-white p-6 rounded-xl shadow-lg hover:shadow-xl hover:opacity-90 transition duration-300 transform hover:scale-105 flex flex-col items-center justify-center"
           >
             <Image
-              src="/icons8-windows-11-50.png"
-              alt="Windows"
-              width={40}
-              height={40}
-              className="w-10 h-10"
+              src="/English_get-it-from-MS.png"
+              alt="Get it from Microsoft Store"
+              width={200}
+              height={60}
+              className="w-full"
             />
-            <div className="font-bold text-lg">Download for Windows</div>
-            <div className="text-sm opacity-90">v1.2.6</div>
           </a>
 
           {/* Android Button */}
