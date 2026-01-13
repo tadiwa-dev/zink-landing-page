@@ -20,7 +20,7 @@ export default function Home() {
       if (userAgent.includes('android')) {
         window.location.href = 'https://play.google.com/store/apps/details?id=com.tmatewe.notez'
       } else if (userAgent.includes('iphone') || userAgent.includes('ipad')) {
-        alert('Zink AI Minutes is not yet available on iOS. Please check back soon!')
+        window.location.href = 'https://apps.apple.com/zw/app/zink-ai-minutes/id6757399827'
       }
     } else {
       window.location.href = 'https://apps.microsoft.com/store/detail/9PBPK70JCSZJ?cid=DevShareMCLPCS'
@@ -80,7 +80,7 @@ export default function Home() {
         </div>
 
         {/* Download Buttons */}
-        <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-16">
+        <div className="grid sm:grid-cols-3 gap-6 max-w-2xl mx-auto mb-16">
           {/* Windows Button */}
           <a
             href="https://apps.microsoft.com/store/detail/9PBPK70JCSZJ?cid=DevShareMCLPCS"
@@ -89,6 +89,22 @@ export default function Home() {
             <Image
               src="/English_get-it-from-MS.png"
               alt="Get it from Microsoft Store"
+              width={200}
+              height={60}
+              className="w-full"
+            />
+          </a>
+
+          {/* iOS / App Store Button */}
+          <a
+            href="https://apps.apple.com/zw/app/zink-ai-minutes/id6757399827"
+            className="bg-white text-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl hover:opacity-90 transition duration-300 transform hover:scale-105 flex flex-col items-center justify-center"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/Download_on_the_App_Store_RGB_blk.png"
+              alt="Download on the App Store"
               width={200}
               height={60}
               className="w-full"
