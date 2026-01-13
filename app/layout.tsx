@@ -4,7 +4,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Zink AI Minutes - Meeting Assistant',
-  description: 'The only AI note-taker that handles mixed English & Shona conversations. Available on Windows and Android.',
+  description: 'The only AI note-taker that handles mixed English & Shona conversations. Available on all major platforms.',
   icons: {
     icon: [
       {
