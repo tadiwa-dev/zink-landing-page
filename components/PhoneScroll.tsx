@@ -16,11 +16,23 @@ const PhoneScroll = () => {
 
   const [isLoaded, setIsLoaded] = useState(false)
   const [currentFrame, setCurrentFrame] = useState(1)
+  const [isMobile, setIsMobile] = useState(false)
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end start'],
   })
+
+  // Detect mobile on mount
+  useEffect(() => {
+    const checkMobile = () => {
+      const userAgent = navigator.userAgent.toLowerCase()
+      const isMobileDevice = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent)
+      setIsMobile(isMobileDevice)
+    }
+
+    checkMobile()
+  }, [])
 
   // Map scroll progress to frame number (1-80)
   const frameNumber = useTransform(scrollYProgress, [0, 1], [1, 80])
@@ -30,8 +42,13 @@ const PhoneScroll = () => {
     return `/PhoneKeyframes/ezgif-frame-${frameNum.toString().padStart(3, '0')}.jpg`
   }
 
-  // Preload all images
+  // Preload all images (skip on mobile)
   useEffect(() => {
+    if (isMobile) {
+      setIsLoaded(true)
+      return
+    }
+
     const preloadImages = async () => {
       const promises: Promise<void>[] = []
 
@@ -57,7 +74,7 @@ const PhoneScroll = () => {
     }
 
     preloadImages()
-  }, [])
+  }, [isMobile])
 
   // Draw to canvas - stretch to fill width
   const drawFrame = useCallback((frameNum: number) => {
@@ -212,6 +229,11 @@ const PhoneScroll = () => {
         </p>
       </motion.div>
     )
+  }
+
+  // Mobile: Hide component entirely on mobile
+  if (isMobile) {
+    return null
   }
 
   return (
