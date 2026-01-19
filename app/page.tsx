@@ -3,6 +3,7 @@
 import { Music, FileText, Globe, Github, Mail } from 'lucide-react'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import PhoneScroll from '@/components/PhoneScroll'
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false)
@@ -126,6 +127,9 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      {/* Scrollytelling Section */}
+      <PhoneScroll />
 
       {/* Features Grid */}
       <section className="bg-gray-50 py-20">
