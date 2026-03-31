@@ -3,7 +3,7 @@
 import { Music, FileText, Globe, Github, Mail } from 'lucide-react'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import PhoneScroll from '@/components/PhoneScroll'
+import { CinematicHero } from '@/components/ui/cinematic-hero'
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false)
@@ -11,7 +11,6 @@ export default function Home() {
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase()
     const isMob = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent)
-    
     setIsMobile(isMob)
   }, [])
 
@@ -29,9 +28,9 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Navbar */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+      <nav className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur border-b border-gray-100 shadow-sm">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Image
@@ -58,78 +57,23 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-6 py-20 text-center">
-        <h1 className="text-5xl sm:text-6xl font-bold text-dark mb-6 leading-tight">
-          Meeting Minutes, Made Easy.
-        </h1>
-        <p className="text-xl text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed">
-          The only AI note-taker that handles mixed English & Shona conversations. Available on your desktop and in your pocket.
-        </p>
-
-        {/* App Icon or Device Mockup */}
-        <div className="mb-16 flex justify-center">
-          <div className="relative w-80 h-80">
-            <Image
-              src="/App_Mockup.png"
-              alt="Zink App Mockup"
-              width={320}
-              height={320}
-              className="rounded-3xl shadow-lg w-full h-full object-cover"
-            />
-          </div>
-        </div>
-
-        {/* Download Buttons */}
-        <div className="grid sm:grid-cols-3 gap-6 max-w-2xl mx-auto mb-16">
-          {/* Windows Button */}
-          <a
-            href="https://apps.microsoft.com/store/detail/9PBPK70JCSZJ?cid=DevShareMCLPCS"
-            className="bg-primary text-white p-6 rounded-xl shadow-lg hover:shadow-xl hover:opacity-90 transition duration-300 transform hover:scale-105 flex flex-col items-center justify-center"
-          >
-            <Image
-              src="/English_get-it-from-MS.png"
-              alt="Get it from Microsoft Store"
-              width={200}
-              height={60}
-              className="w-full"
-            />
-          </a>
-
-          {/* iOS / App Store Button */}
-          <a
-            href="https://apps.apple.com/zw/app/zink-ai-minutes/id6757399827"
-            className="bg-white text-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl hover:opacity-90 transition duration-300 transform hover:scale-105 flex flex-col items-center justify-center"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src="/Download_on_the_App_Store_RGB_blk.png"
-              alt="Download on the App Store"
-              width={200}
-              height={60}
-              className="w-full"
-            />
-          </a>
-
-          {/* Android Button */}
-          <a
-            href="https://play.google.com/store/apps/details?id=com.tmatewe.notez"
-            className="bg-black text-white p-6 rounded-xl shadow-lg hover:shadow-xl hover:opacity-90 transition duration-300 transform hover:scale-105 flex flex-col items-center justify-center"
-          >
-            <Image
-              src="/GetItOnGooglePlay_Badge_Web_color_English.png"
-              alt="Get it on Google Play"
-              width={200}
-              height={60}
-              className="w-full"
-            />
-          </a>
-        </div>
-      </section>
-
-      {/* Scrollytelling Section */}
-      <PhoneScroll />
+      {/* Cinematic Hero Section */}
+      <CinematicHero
+        brandName="ZINK"
+        tagline1="Summarize conversations,"
+        tagline2="in every language."
+        cardHeading="Bilingual Intelligence."
+        cardDescription={
+          <><span className="text-white font-semibold">Zink AI Minutes</span> is the only AI note-taker built for mixed English &amp; Shona conversations—capturing every word, across every device, in real time.</>
+        }
+        metricValue={120}
+        metricLabel="Minutes Saved"
+        ctaHeading="Start taking better notes."
+        ctaDescription="Available on iOS, Android, and Windows. Record on your phone, polish on your PC."
+        appStoreUrl="https://apps.apple.com/zw/app/zink-ai-minutes/id6757399827"
+        googlePlayUrl="https://play.google.com/store/apps/details?id=com.tmatewe.notez"
+        microsoftStoreUrl="https://apps.microsoft.com/store/detail/9PBPK70JCSZJ?cid=DevShareMCLPCS"
+      />
 
       {/* Features Grid */}
       <section className="bg-gray-50 py-20">
@@ -147,7 +91,7 @@ export default function Home() {
             <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
               <Music className="w-12 h-12 text-primary mb-4" />
               <h3 className="text-xl font-bold text-dark mb-3">Bilingual AI</h3>
-              <p className="text-gray-700">Switch languages mid-sentence without confusing the AI. Zink understands mixed English & Shona seamlessly.</p>
+              <p className="text-gray-700">Switch languages mid-sentence without confusing the AI. Zink understands mixed English &amp; Shona seamlessly.</p>
             </div>
 
             {/* Feature 3 */}
